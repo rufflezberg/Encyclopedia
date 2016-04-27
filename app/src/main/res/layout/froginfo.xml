@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/fName"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="0.04"
+        android:textColor="#ffffffff"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/fImag"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/fName"
+        android:layout_weight="0.28" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/sName"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/fImag"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/family"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/sName"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/descript"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/family"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/siz"
+        android:layout_weight="0.04"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/descript"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/voic"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/siz"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/breeding"
+        android:layout_weight="0.04"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/voic"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/habit"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/breeding"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/rang"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/habit"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/behav"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/rang"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/diet"
+        android:layout_weight="0.04"
+        android:layout_below="@+id/behav"
+        android:textColor="#ffffffff"/>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:background="@color/material_blue_grey_800"
+        android:id="@+id/button"
+        android:layout_below="@+id/diet"
+        android:layout_centerInParent="true"
+        android:layout_weight="0.04" />
+
+    </RelativeLayout>
+</ScrollView>
