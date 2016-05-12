@@ -1,0 +1,172 @@
+Applications Memory Usage (kB):
+Uptime: 9414819 Realtime: 15276307
+
+Total PSS by process:
+   133025 kB: com.facebook.katana (pid 2520)
+    75628 kB: system (pid 601)
+    68137 kB: com.facebook.orca (pid 779)
+    61096 kB: com.android.launcher (pid 1749 / activities)
+    51804 kB: com.android.systemui (pid 759 / activities)
+    46354 kB: com.google.android.gms (pid 1499)
+    43244 kB: com.example.russell.frogencyclopdepia (pid 26966 / activities)
+    37790 kB: com.skype.raider (pid 23824)
+    35001 kB: com.google.android.gms.persistent (pid 1319)
+    27515 kB: com.google.android.inputmethod.latin (pid 1625)
+    25852 kB: surfaceflinger (pid 187)
+    23609 kB: com.google.android.apps.plus (pid 23756)
+    23271 kB: com.google.android.music:main (pid 3985)
+    23153 kB: com.google.android.googlequicksearchbox:search (pid 24918)
+    20886 kB: com.google.android.talk (pid 22508)
+    19571 kB: com.android.settings (pid 26593)
+    18823 kB: android:ui (pid 25391)
+    16854 kB: com.instagram.android (pid 23980)
+    15461 kB: com.google.android.apps.photos (pid 22717)
+    12914 kB: com.android.vending (pid 25314)
+    12407 kB: com.dropbox.android (pid 5845)
+    12140 kB: com.google.android.calendar (pid 25960)
+    11083 kB: com.google.android.apps.maps (pid 6256)
+    10012 kB: org.dmfs.caldav.icloud (pid 6009)
+     9703 kB: android.process.media (pid 25355)
+     8904 kB: com.android.phone (pid 1732)
+     6805 kB: mediaserver (pid 193)
+     6373 kB: com.instagram.android:mqtt (pid 2748)
+     6318 kB: com.google.android.deskclock (pid 27028)
+     6242 kB: android.process.acore (pid 17757)
+     6000 kB: com.android.chrome (pid 25425)
+     4993 kB: zygote (pid 205)
+     4752 kB: com.google.process.gapps (pid 12675)
+     4674 kB: com.google.android.googlequicksearchbox:interactor (pid 1609)
+     4493 kB: com.android.providers.calendar (pid 24360)
+     4066 kB: com.android.nfc (pid 1707)
+     2751 kB: com.google.android.partnersetup (pid 24944)
+     2625 kB: logd (pid 173)
+     2199 kB: sdcard (pid 790)
+     2129 kB: com.nuance.xt9.input (pid 1714)
+     1952 kB: mm-qcamera-daemon (pid 208)
+     1531 kB: drmserver (pid 192)
+     1125 kB: wpa_supplicant (pid 731)
+      972 kB: netd (pid 189)
+      957 kB: vold (pid 174)
+      723 kB: sensors.qcom (pid 27128)
+      702 kB: /init (pid 1)
+      595 kB: keystore (pid 196)
+      575 kB: thermald (pid 200)
+      517 kB: installd (pid 194)
+      507 kB: gatekeeperd (pid 206)
+      474 kB: ueventd (pid 149)
+      456 kB: adbd (pid 25706)
+      452 kB: healthd (pid 184)
+      433 kB: bridgemgrd (pid 199)
+      415 kB: rmt_storage (pid 198)
+      414 kB: logcat (pid 27049)
+      414 kB: dumpsys (pid 27136)
+      381 kB: mpdecision (pid 201)
+      348 kB: servicemanager (pid 186)
+      347 kB: qseecomd (pid 221)
+      312 kB: lmkd (pid 185)
+      310 kB: debuggerd (pid 191)
+      218 kB: qseecomd (pid 210)
+
+Total PSS by OOM adjustment:
+    57604 kB: Native
+               25852 kB: surfaceflinger (pid 187)
+                6805 kB: mediaserver (pid 193)
+                4993 kB: zygote (pid 205)
+                2625 kB: logd (pid 173)
+                2199 kB: sdcard (pid 790)
+                1952 kB: mm-qcamera-daemon (pid 208)
+                1531 kB: drmserver (pid 192)
+                1125 kB: wpa_supplicant (pid 731)
+                 972 kB: netd (pid 189)
+                 957 kB: vold (pid 174)
+                 723 kB: sensors.qcom (pid 27128)
+                 702 kB: /init (pid 1)
+                 595 kB: keystore (pid 196)
+                 575 kB: thermald (pid 200)
+                 517 kB: installd (pid 194)
+                 507 kB: gatekeeperd (pid 206)
+                 474 kB: ueventd (pid 149)
+                 456 kB: adbd (pid 25706)
+                 452 kB: healthd (pid 184)
+                 433 kB: bridgemgrd (pid 199)
+                 415 kB: rmt_storage (pid 198)
+                 414 kB: logcat (pid 27049)
+                 414 kB: dumpsys (pid 27136)
+                 381 kB: mpdecision (pid 201)
+                 348 kB: servicemanager (pid 186)
+                 347 kB: qseecomd (pid 221)
+                 312 kB: lmkd (pid 185)
+                 310 kB: debuggerd (pid 191)
+                 218 kB: qseecomd (pid 210)
+    75628 kB: System
+               75628 kB: system (pid 601)
+    66903 kB: Persistent
+               51804 kB: com.android.systemui (pid 759 / activities)
+                8904 kB: com.android.phone (pid 1732)
+                4066 kB: com.android.nfc (pid 1707)
+                2129 kB: com.nuance.xt9.input (pid 1714)
+    43244 kB: Foreground
+               43244 kB: com.example.russell.frogencyclopdepia (pid 26966 / activities)
+    39675 kB: Visible
+               35001 kB: com.google.android.gms.persistent (pid 1319)
+                4674 kB: com.google.android.googlequicksearchbox:interactor (pid 1609)
+    27515 kB: Perceptible
+               27515 kB: com.google.android.inputmethod.latin (pid 1625)
+    19715 kB: A Services
+               10012 kB: org.dmfs.caldav.icloud (pid 6009)
+                9703 kB: android.process.media (pid 25355)
+    61096 kB: Home
+               61096 kB: com.android.launcher (pid 1749 / activities)
+   254296 kB: B Services
+              133025 kB: com.facebook.katana (pid 2520)
+               68137 kB: com.facebook.orca (pid 779)
+               23271 kB: com.google.android.music:main (pid 3985)
+               12407 kB: com.dropbox.android (pid 5845)
+               11083 kB: com.google.android.apps.maps (pid 6256)
+                6373 kB: com.instagram.android:mqtt (pid 2748)
+   278111 kB: Cached
+               46354 kB: com.google.android.gms (pid 1499)
+               37790 kB: com.skype.raider (pid 23824)
+               23609 kB: com.google.android.apps.plus (pid 23756)
+               23153 kB: com.google.android.googlequicksearchbox:search (pid 24918)
+               20886 kB: com.google.android.talk (pid 22508)
+               19571 kB: com.android.settings (pid 26593)
+               18823 kB: android:ui (pid 25391)
+               16854 kB: com.instagram.android (pid 23980)
+               15461 kB: com.google.android.apps.photos (pid 22717)
+               12914 kB: com.android.vending (pid 25314)
+               12140 kB: com.google.android.calendar (pid 25960)
+                6318 kB: com.google.android.deskclock (pid 27028)
+                6242 kB: android.process.acore (pid 17757)
+                6000 kB: com.android.chrome (pid 25425)
+                4752 kB: com.google.process.gapps (pid 12675)
+                4493 kB: com.android.providers.calendar (pid 24360)
+                2751 kB: com.google.android.partnersetup (pid 24944)
+
+Total PSS by category:
+   223427 kB: Native
+   185740 kB: Dalvik
+   139365 kB: .dex mmap
+   121120 kB: EGL mtrack
+    70766 kB: .so mmap
+    31960 kB: .art mmap
+    28913 kB: Dalvik Other
+    27919 kB: .apk mmap
+    27438 kB: Gfx dev
+    25365 kB: .oat mmap
+    16783 kB: Unknown
+    10420 kB: Stack
+     6635 kB: Ashmem
+     6037 kB: Other mmap
+     1607 kB: .ttf mmap
+      188 kB: Other dev
+      104 kB: Cursor
+        0 kB: .jar mmap
+        0 kB: GL mtrack
+        0 kB: Other mtrack
+
+Total RAM: 1850144 kB (status normal)
+ Free RAM: 1056095 kB (278111 cached pss + 580152 cached kernel + 197832 free)
+ Used RAM: 746592 kB (645676 used pss + 100916 kernel)
+ Lost RAM: 47457 kB
+   Tuning: 192 (large 512), oom 184320 kB, restore limit 61440 kB (high-end-gfx)

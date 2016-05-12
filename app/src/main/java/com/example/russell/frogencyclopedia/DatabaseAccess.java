@@ -6,59 +6,126 @@ package com.example.russell.frogencyclopedia;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseAccess {
-    private SQLiteOpenHelper openHelper;
+public class DatabaseAccess extends SQLiteOpenHelper{
+
+    private static String DB_PATH = "/data/data/assets/databases/";
+
+    private static String DB_NAME = "Frog Encyclopedia.db";
+
     private SQLiteDatabase database;
-    private static DatabaseAccess instance;
 
-    /**
-     * Private constructor to avoid object creation from outside classes.
-     *
-     * @param context
-     */
-    private DatabaseAccess(Context context) {
-        this.openHelper = new DatabaseOpenHelper(context);
+    private final Context ctx;
+
+
+    public DatabaseAccess(Context context) {
+        super(context, DB_NAME, null, 1);
+        this.ctx = context;
     }
 
-    /**
-     * Return a singleton instance of DatabaseAccess.
-     *
-     * @param context the Context
-     * @return the instance of DatabaseAccess
-     */
-    public static DatabaseAccess getInstance(Context context) {
-        if (instance == null) {
-            instance = new DatabaseAccess(context);
+    public void createDataBase() throws IOException {
+
+        boolean dbExist = checkDataBase();
+
+        if(!dbExist){
+            this.getReadableDatabase();
+
+            try {
+
+                copyDataBase();
+
+            } catch (IOException e) {
+
+                throw new Error("Error copying database");
+
+            }
         }
-        return instance;
+
     }
 
-    /**
-     * Open the database connection.
-     */
-    public void open() {
-        this.database = openHelper.getWritableDatabase();
-    }
+    private boolean checkDataBase(){
 
-    /**
-     * Close the database connection.
-     */
-    public void close() {
-        if (database != null) {
-            this.database.close();
+        SQLiteDatabase checkDB = null;
+
+        try{
+            String myPath = DB_PATH + DB_NAME;
+            checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
+        }catch(SQLiteException e){
+
         }
+
+        if(checkDB != null){
+
+            checkDB.close();
+        }
+
+        return checkDB != null ? true : false;
     }
 
-    /**
-     * Read all quotes from the database.
-     *
-     * @return a List of quotes
-     */
+    private void copyDataBase() throws IOException{
+
+        //Open your local db as the input stream
+        InputStream myInput = ctx.getAssets().open(DB_NAME);
+
+        // Path to the just created empty db
+        String outFileName = DB_PATH + DB_NAME;
+
+        //Open the empty db as the output stream
+        OutputStream myOutput = new FileOutputStream(outFileName);
+
+        //transfer bytes from the inputfile to the outputfile
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = myInput.read(buffer))>0){
+            myOutput.write(buffer, 0, length);
+        }
+
+        //Close the streams
+        myOutput.flush();
+        myOutput.close();
+        myInput.close();
+
+    }
+
+    public void openDataBase() throws SQLException {
+
+        //Open the database
+        String myPath = DB_PATH + DB_NAME;
+        database = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
+    }
+
+    @Override
+    public synchronized void close() {
+
+        if(database != null)
+            database.close();
+
+        super.close();
+
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+
     public List<String> getInfo(String name) {
         List<String> list = new ArrayList<>();
         //write query
@@ -76,6 +143,17 @@ public class DatabaseAccess {
         list.add(cr.getString(9));
         list.add(cr.getString(10));
         cr.close();
+        return list;
+    }
+
+    public List<String> getNames(){
+        List<String> list = new ArrayList<>();
+        Cursor cr = database.rawQuery("", null);
+        cr.moveToFirst();
+        list.add(cr.getString(0));
+        while(cr.moveToNext()){
+            list.add(cr.getString(0));
+        }
         return list;
     }
 

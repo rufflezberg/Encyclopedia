@@ -3,7 +3,6 @@ package com.example.russell.frogencyclopedia;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.SQLException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -12,8 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,17 +31,8 @@ public class SeeFrogs extends Activity {
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_seefrogs);
 
-        DataBaseHelper db = new DataBaseHelper(this);
-
-        try {
-
-            db.createDataBase();
-
-        } catch (IOException ioe) {
-
-            throw new Error("Unable to create database");
-
-        }
+        DatabaseAccess db;
+        db = new DatabaseAccess(this);
 
         try {
 
@@ -49,7 +40,8 @@ public class SeeFrogs extends Activity {
 
         }catch(SQLException sqle){
 
-            throw sqle;
+            Toast.makeText(this, "Database failed to open", Toast.LENGTH_SHORT);
+            finish();
 
         }
 
