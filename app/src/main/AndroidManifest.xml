@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.russell.frogencyclopedia" android:installLocation="auto">
+    package="com.russell.encyclopedia" android:installLocation="auto">
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.russell.frogencyclopedia.HomeActivity"
+            android:name="com.russell.encyclopedia.HomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,12 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.russell.frogencyclopedia.SeeFrogs"></activity>
-        <activity android:name="com.example.russell.frogencyclopedia.FrogInfo"></activity>
-        <activity android:name="com.example.russell.frogencyclopedia.TriviaGame"></activity>
-        <activity android:name="com.example.russell.frogencyclopedia.TriviaGameOver"></activity>
-        <activity android:name="com.example.russell.frogencyclopedia.TriviaHelp"></activity>
-        <activity android:name="com.example.russell.frogencyclopedia.TriviaPlay"></activity>
+        <activity android:name="com.russell.encyclopedia.SeeFrogs"></activity>
+        <activity android:name="com.russell.encyclopedia.FrogInfo"></activity>
+        <activity android:name="com.russell.encyclopedia.TriviaGame"></activity>
+        <activity android:name="com.russell.encyclopedia.TriviaGameOver"></activity>
+        <activity android:name="com.russell.encyclopedia.TriviaHelp"></activity>
+        <activity android:name="com.russell.encyclopedia.TriviaPlay"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA_EXTENDED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.hardware.camera.autofocus"/>
 </manifest>

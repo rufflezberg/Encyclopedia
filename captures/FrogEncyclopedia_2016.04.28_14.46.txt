@@ -8,7 +8,7 @@ Total PSS by process:
     61096 kB: com.android.launcher (pid 1749 / activities)
     51804 kB: com.android.systemui (pid 759 / activities)
     46354 kB: com.google.android.gms (pid 1499)
-    43244 kB: com.example.russell.frogencyclopdepia (pid 26966 / activities)
+    43244 kB: com.russell.frogencyclopdepia (pid 26966 / activities)
     37790 kB: com.skype.raider (pid 23824)
     35001 kB: com.google.android.gms.persistent (pid 1319)
     27515 kB: com.google.android.inputmethod.latin (pid 1625)
@@ -106,7 +106,7 @@ Total PSS by OOM adjustment:
                 4066 kB: com.android.nfc (pid 1707)
                 2129 kB: com.nuance.xt9.input (pid 1714)
     43244 kB: Foreground
-               43244 kB: com.example.russell.frogencyclopdepia (pid 26966 / activities)
+               43244 kB: com.russell.frogencyclopdepia (pid 26966 / activities)
     39675 kB: Visible
                35001 kB: com.google.android.gms.persistent (pid 1319)
                 4674 kB: com.google.android.googlequicksearchbox:interactor (pid 1609)

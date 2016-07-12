@@ -1221,7 +1221,7 @@ ACTIVITY MANAGER SERVICES (dumpsys activity services)
 
 ACTIVITY MANAGER RECENT TASKS (dumpsys activity recents)
   Recent tasks:
-  * Recent #0: TaskRecord{37fe78d #18 A=com.example.russell.frogencyclopdepia U=0 sz=1}
+  * Recent #0: TaskRecord{37fe78d #18 A=com.russell.frogencyclopdepia U=0 sz=1}
   * Recent #1: TaskRecord{a10bd42 #1 A=com.android.launcher U=0 sz=1}
   * Recent #2: TaskRecord{5d6e153 #5 A=com.android.systemui U=0 sz=1}
   * Recent #3: TaskRecord{e576a90 #16 I=com.android.settings/.deviceinfo.UsbModeChooserActivity U=0 sz=0}
@@ -1230,17 +1230,17 @@ ACTIVITY MANAGER ACTIVITIES (dumpsys activity activities)
 Display #0 (activities from top to bottom):
   Stack #11:
     Task id #18
-      TaskRecord{37fe78d #18 A=com.example.russell.frogencyclopdepia U=0 sz=1}
-      Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.example.russell.frogencyclopdepia/.HomeActivity bnds=[264,1554][456,1770] (has extras) }
-        Hist #0: ActivityRecord{296ad45 u0 com.example.russell.frogencyclopdepia/.HomeActivity t18}
-          Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.example.russell.frogencyclopdepia/.HomeActivity bnds=[264,1554][456,1770] (has extras) }
-          ProcessRecord{9106f89 26966:com.example.russell.frogencyclopdepia/u0a103}
+      TaskRecord{37fe78d #18 A=com.russell.frogencyclopdepia U=0 sz=1}
+      Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.russell.frogencyclopdepia/.HomeActivity bnds=[264,1554][456,1770] (has extras) }
+        Hist #0: ActivityRecord{296ad45 u0 com.russell.frogencyclopdepia/.HomeActivity t18}
+          Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.russell.frogencyclopdepia/.HomeActivity bnds=[264,1554][456,1770] (has extras) }
+          ProcessRecord{9106f89 26966:com.russell.frogencyclopdepia/u0a103}
 
     Running activities (most recent first):
-      TaskRecord{37fe78d #18 A=com.example.russell.frogencyclopdepia U=0 sz=1}
-        Run #0: ActivityRecord{296ad45 u0 com.example.russell.frogencyclopdepia/.HomeActivity t18}
+      TaskRecord{37fe78d #18 A=com.russell.frogencyclopdepia U=0 sz=1}
+        Run #0: ActivityRecord{296ad45 u0 com.russell.frogencyclopdepia/.HomeActivity t18}
 
-    mResumedActivity: ActivityRecord{296ad45 u0 com.example.russell.frogencyclopdepia/.HomeActivity t18}
+    mResumedActivity: ActivityRecord{296ad45 u0 com.russell.frogencyclopdepia/.HomeActivity t18}
 
   Stack #0:
     Task id #1
@@ -1263,7 +1263,7 @@ Display #0 (activities from top to bottom):
       TaskRecord{5d6e153 #5 A=com.android.systemui U=0 sz=1}
         Run #0: ActivityRecord{fac1ca9 u0 com.android.systemui/.recents.RecentsActivity t5}
 
-  mFocusedActivity: ActivityRecord{296ad45 u0 com.example.russell.frogencyclopdepia/.HomeActivity t18}
+  mFocusedActivity: ActivityRecord{296ad45 u0 com.russell.frogencyclopdepia/.HomeActivity t18}
   mFocusedStack=ActivityStack{af16b8e stackId=11, 1 tasks} mLastFocusedStack=ActivityStack{af16b8e stackId=11, 1 tasks}
   mSleepTimeout=false
   mCurTaskId=18
@@ -1316,7 +1316,7 @@ ACTIVITY MANAGER RUNNING PROCESSES (dumpsys activity processes)
     PERS #32: pers  F/ /P  trm: 0 1707:com.android.nfc/1027 (fixed)
     PERS #31: pers  F/ /P  trm: 0 1714:com.nuance.xt9.input/u0a62 (fixed)
     PERS #30: pers  F/ /P  trm: 0 1732:com.android.phone/1001 (fixed)
-    Proc # 0: fore  F/A/T  trm: 0 26966:com.example.russell.frogencyclopdepia/u0a103 (top-activity)
+    Proc # 0: fore  F/A/T  trm: 0 26966:com.russell.frogencyclopdepia/u0a103 (top-activity)
     Proc #26: vis   F/ /SB trm: 0 1609:com.google.android.googlequicksearchbox:interactor/u0a57 (service)
         com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService<=Proc{601:system/1000}
     Proc # 3: vis   F/ /IF trm: 0 1319:com.google.android.gms.persistent/u0a21 (service)
