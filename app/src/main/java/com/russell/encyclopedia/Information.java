@@ -21,14 +21,14 @@ import java.util.List;
 /**
  * Created by Russell on 4/13/2015.
  */
-public class FrogInfo extends SeeFrogs {
+public class Information extends SeeAnimals {
     TextView FROGNAME,SCINAME,FAM,DESC,SIZE,VOICE,BREED,HABIT,RANGE,BEHAV,DIET,THREAT;
     String frogname,sciname,fam,desc,size,voice,breed,habit,range,behav,diet,threat,endangered;
     Context ctx=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.froginfo);
+        setContentView(R.layout.information);
 
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.froginfo);
 
@@ -113,7 +113,7 @@ public class FrogInfo extends SeeFrogs {
         Button back = (Button) findViewById(R.id.button);
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent seeFrogs = new Intent(view.getContext(), SeeFrogs.class);
+                Intent seeFrogs = new Intent(view.getContext(), SeeAnimals.class);
                 startActivityForResult(seeFrogs, 0);
             }
         });

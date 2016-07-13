@@ -15,8 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.russell.encyclopedia.SeeFrogs"></activity>
-        <activity android:name="com.russell.encyclopedia.FrogInfo"></activity>
+        <activity android:name=".SeeAnimals"></activity>
+        <activity android:name=".Information"></activity>
         <activity android:name="com.russell.encyclopedia.TriviaGame"></activity>
         <activity android:name="com.russell.encyclopedia.TriviaGameOver"></activity>
         <activity android:name="com.russell.encyclopedia.TriviaHelp"></activity>

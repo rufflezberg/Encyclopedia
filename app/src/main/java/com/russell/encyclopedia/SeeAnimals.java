@@ -20,14 +20,14 @@ import java.util.List;
 /**
  * Created by Russell on 4/14/2015.
  */
-public class SeeFrogs extends Activity {
+public class SeeAnimals extends Activity {
     public static String name;
     List<String> nameList = new ArrayList<String>();
     Context ctx = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seefrogs);
+        setContentView(R.layout.seeanimals);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_seefrogs);
 
@@ -107,7 +107,7 @@ public class SeeFrogs extends Activity {
             //if needed lists have an indexOf(Object o) function
             imageButtonList.get(i).setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view){
-                    Intent toInfo=new Intent(view.getContext(), FrogInfo.class);
+                    Intent toInfo=new Intent(view.getContext(), Information.class);
                     name = nameList.get(n);
                     startActivityForResult(toInfo, 0);
                 }

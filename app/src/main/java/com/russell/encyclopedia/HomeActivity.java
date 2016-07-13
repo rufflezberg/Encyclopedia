@@ -15,7 +15,7 @@ public class HomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.homeactivity);
 
         DatabaseAccess db = new DatabaseAccess(this);
 
@@ -35,7 +35,7 @@ public class HomeActivity extends Activity {
         ImageButton seeFrogsNav = (ImageButton) findViewById(R.id.seeFrogsNav);
         seeFrogsNav.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent seeFrogs = new Intent(view.getContext(), SeeFrogs.class);
+                Intent seeFrogs = new Intent(view.getContext(), SeeAnimals.class);
                 startActivityForResult(seeFrogs, 0);
             }
         });
