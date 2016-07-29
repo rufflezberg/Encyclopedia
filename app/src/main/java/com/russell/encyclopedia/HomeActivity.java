@@ -17,6 +17,7 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homeactivity);
 
+        //Set up access to the database.
         DatabaseAccess db = new DatabaseAccess(this);
 
         try{
@@ -25,6 +26,7 @@ public class HomeActivity extends Activity {
             throw new Error("Unable to create database");
         }
 
+        //Navigation to the Lincoln Park Zoo website.
         ImageButton lincolnParkAd=(ImageButton)findViewById(R.id.lincolnPark);
         lincolnParkAd.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -32,6 +34,8 @@ public class HomeActivity extends Activity {
                 startActivity(lincolnParkAd);
             }
         });
+
+        //Navigation to the see animals activity.
         ImageButton seeAnimalsNav = (ImageButton) findViewById(R.id.seeAnimalsNav);
         seeAnimalsNav.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -40,10 +44,11 @@ public class HomeActivity extends Activity {
             }
         });
 
+        //Navigation to the trivia main activity
         ImageButton triviaGameNav = (ImageButton) findViewById(R.id.triviaGameNav);
         triviaGameNav.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent triviaGame = new Intent (view.getContext(), TriviaGame.class);
+                Intent triviaGame = new Intent (view.getContext(), TriviaMain.class);
                 startActivityForResult(triviaGame, 0);
             }
         });

@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".SeeAnimals"></activity>
         <activity android:name=".Information"></activity>
-        <activity android:name="com.russell.encyclopedia.TriviaGame"></activity>
+        <activity android:name=".TriviaMain"></activity>
         <activity android:name="com.russell.encyclopedia.TriviaGameOver"></activity>
         <activity android:name="com.russell.encyclopedia.TriviaHelp"></activity>
         <activity android:name="com.russell.encyclopedia.TriviaPlay"></activity>

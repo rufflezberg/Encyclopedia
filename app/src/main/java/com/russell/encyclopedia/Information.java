@@ -22,9 +22,11 @@ import java.util.List;
  * Created by Russell on 4/13/2015.
  */
 public class Information extends SeeAnimals {
+
     TextView ANIMALNAME,SCIENTIFICNAME,FAMILY,DESCRIPTION,SIZE,VOICE,BREEDING,HABITAT,RANGE,BEHAVIOR,DIET,THREATENED;
     String animalName,scientificName,animalFamily,animalDescription,animalSize,animalVoice,animalBreeding,animalHabitat,animalRange,animalBehavior,animalDiet,threatened,endangered;
     Context ctx=this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,7 @@ public class Information extends SeeAnimals {
         ImageView ANIMALIMAGE;
         ANIMALIMAGE=(ImageView)findViewById(R.id.animalImage);
 
+        //Set up database connection.
         DatabaseAccess db;
         db = new DatabaseAccess(this);
 
@@ -61,11 +64,13 @@ public class Information extends SeeAnimals {
 
         }
 
+        //Query for information image for the current animal and convert image to a drawable object.
         byte[] image = db.getInfoImage(name);
         Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
         BitmapDrawable drawableBitmap = new BitmapDrawable(ctx.getResources(), bitmap);
         ANIMALIMAGE.setBackground(drawableBitmap);
 
+        //Query for the information for the current animal.
         List<String> infoList = db.getInfo(name);
         animalName=infoList.get(0);
         scientificName=infoList.get(1);
@@ -81,6 +86,7 @@ public class Information extends SeeAnimals {
         threatened=infoList.get(11);
         endangered=infoList.get(12);
 
+        //Checks if the current animal is threatened or endangered.
         if(threatened.equals("True") || endangered.equals("True")){
             THREATENED=new TextView(ctx);
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -98,6 +104,7 @@ public class Information extends SeeAnimals {
             SCIENTIFICNAME.setLayoutParams(change);
         }
 
+        //Sets the text for the textViews so the user can see the information for the current animal.
         ANIMALNAME.setText(animalName + "\n");
         SCIENTIFICNAME.setText("\nScientific Name: " + scientificName + "\n");
         FAMILY.setText("Family: " + animalFamily + "\n");
@@ -110,8 +117,9 @@ public class Information extends SeeAnimals {
         BEHAVIOR.setText("Behavior: " + animalBehavior + "\n");
         DIET.setText("Diet: " + animalDiet + "\n");
 
-        Button back = (Button) findViewById(R.id.backSeeAnimals);
-        back.setOnClickListener(new View.OnClickListener() {
+        //Navigate to the see animals activity.
+        Button seeAnimals = (Button) findViewById(R.id.backSeeAnimals);
+        seeAnimals.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent seeAnimals = new Intent(view.getContext(), SeeAnimals.class);
                 startActivityForResult(seeAnimals, 0);
