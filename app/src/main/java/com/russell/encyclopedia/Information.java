@@ -22,30 +22,30 @@ import java.util.List;
  * Created by Russell on 4/13/2015.
  */
 public class Information extends SeeAnimals {
-    TextView FROGNAME,SCINAME,FAM,DESC,SIZE,VOICE,BREED,HABIT,RANGE,BEHAV,DIET,THREAT;
-    String frogname,sciname,fam,desc,size,voice,breed,habit,range,behav,diet,threat,endangered;
+    TextView ANIMALNAME,SCIENTIFICNAME,FAMILY,DESCRIPTION,SIZE,VOICE,BREEDING,HABITAT,RANGE,BEHAVIOR,DIET,THREATENED;
+    String animalName,scientificName,animalFamily,animalDescription,animalSize,animalVoice,animalBreeding,animalHabitat,animalRange,animalBehavior,animalDiet,threatened,endangered;
     Context ctx=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.information);
 
-        RelativeLayout layout = (RelativeLayout)findViewById(R.id.froginfo);
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.animalInformation);
 
-        FROGNAME=(TextView)findViewById(R.id.fName);
-        SCINAME=(TextView)findViewById(R.id.sName);
-        FAM=(TextView)findViewById(R.id.family);
-        DESC=(TextView)findViewById(R.id.descript);
-        SIZE=(TextView)findViewById(R.id.siz);
-        VOICE=(TextView)findViewById(R.id.voic);
-        BREED=(TextView)findViewById(R.id.breeding);
-        HABIT=(TextView)findViewById(R.id.habit);
-        RANGE=(TextView)findViewById(R.id.rang);
-        BEHAV=(TextView)findViewById(R.id.behav);
-        DIET=(TextView)findViewById(R.id.diet);
+        ANIMALNAME=(TextView)findViewById(R.id.animalName);
+        SCIENTIFICNAME=(TextView)findViewById(R.id.scientificName);
+        FAMILY=(TextView)findViewById(R.id.animalFamily);
+        DESCRIPTION=(TextView)findViewById(R.id.animalDescription);
+        SIZE=(TextView)findViewById(R.id.animalSize);
+        VOICE=(TextView)findViewById(R.id.animalVoice);
+        BREEDING=(TextView)findViewById(R.id.animalBreeding);
+        HABITAT=(TextView)findViewById(R.id.animalHabitat);
+        RANGE=(TextView)findViewById(R.id.animalRange);
+        BEHAVIOR=(TextView)findViewById(R.id.animalBehavior);
+        DIET=(TextView)findViewById(R.id.animalDiet);
 
-        ImageView FROGIMAGE;
-        FROGIMAGE=(ImageView)findViewById(R.id.fImag);
+        ImageView ANIMALIMAGE;
+        ANIMALIMAGE=(ImageView)findViewById(R.id.animalImage);
 
         DatabaseAccess db;
         db = new DatabaseAccess(this);
@@ -64,57 +64,57 @@ public class Information extends SeeAnimals {
         byte[] image = db.getInfoImage(name);
         Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
         BitmapDrawable drawableBitmap = new BitmapDrawable(ctx.getResources(), bitmap);
-        FROGIMAGE.setBackground(drawableBitmap);
+        ANIMALIMAGE.setBackground(drawableBitmap);
 
         List<String> infoList = db.getInfo(name);
-        frogname=infoList.get(0);
-        sciname=infoList.get(1);
-        fam=infoList.get(2);
-        desc=infoList.get(3);
-        size=infoList.get(4);
-        voice=infoList.get(5);
-        breed=infoList.get(6);
-        habit=infoList.get(7);
-        range=infoList.get(8);
-        behav=infoList.get(9);
-        diet=infoList.get(10);
-        threat=infoList.get(11);
+        animalName=infoList.get(0);
+        scientificName=infoList.get(1);
+        animalFamily=infoList.get(2);
+        animalDescription=infoList.get(3);
+        animalSize=infoList.get(4);
+        animalVoice=infoList.get(5);
+        animalBreeding=infoList.get(6);
+        animalHabitat=infoList.get(7);
+        animalRange=infoList.get(8);
+        animalBehavior=infoList.get(9);
+        animalDiet=infoList.get(10);
+        threatened=infoList.get(11);
         endangered=infoList.get(12);
 
-        if(threat.equals("True") || endangered.equals("True")){
-            THREAT=new TextView(ctx);
+        if(threatened.equals("True") || endangered.equals("True")){
+            THREATENED=new TextView(ctx);
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
-            THREAT.setId(0);
-            params.addRule(RelativeLayout.BELOW, R.id.fImag);
-            THREAT.setTextColor(Color.parseColor("#ffffff"));
-            layout.addView(THREAT, params);
+            THREATENED.setId(0);
+            params.addRule(RelativeLayout.BELOW, R.id.animalImage);
+            THREATENED.setTextColor(Color.parseColor("#ffffff"));
+            layout.addView(THREATENED, params);
             if(endangered == "True")
-                THREAT.setText("*Endangered");
+                THREATENED.setText("*Endangered");
             else
-                THREAT.setText("*Threatened");
-            RelativeLayout.LayoutParams change = (RelativeLayout.LayoutParams)SCINAME.getLayoutParams();
+                THREATENED.setText("*Threatened");
+            RelativeLayout.LayoutParams change = (RelativeLayout.LayoutParams)SCIENTIFICNAME.getLayoutParams();
             change.setMargins(0, 20, 0, 0);
-            SCINAME.setLayoutParams(change);
+            SCIENTIFICNAME.setLayoutParams(change);
         }
 
-        FROGNAME.setText(frogname + "\n");
-        SCINAME.setText("\nScientific Name: " + sciname + "\n");
-        FAM.setText("Family: " + fam + "\n");
-        DESC.setText("Description: " + desc + "\n");
-        SIZE.setText("Size: " + size + "\n");
-        VOICE.setText("Voice: " + voice + "\n");
-        BREED.setText("Breeding habits: " + breed + "\n");
-        HABIT.setText("Habitats: " + habit + "\n");
-        RANGE.setText("Range: " + range + "\n");
-        BEHAV.setText("Behavior: " + behav + "\n");
-        DIET.setText("Diet: " + diet + "\n");
+        ANIMALNAME.setText(animalName + "\n");
+        SCIENTIFICNAME.setText("\nScientific Name: " + scientificName + "\n");
+        FAMILY.setText("Family: " + animalFamily + "\n");
+        DESCRIPTION.setText("Description: " + animalDescription + "\n");
+        SIZE.setText("Size: " + animalSize + "\n");
+        VOICE.setText("Voice: " + animalVoice + "\n");
+        BREEDING.setText("Breeding habits: " + animalBreeding + "\n");
+        HABITAT.setText("Habitats: " + animalHabitat + "\n");
+        RANGE.setText("Range: " + animalRange + "\n");
+        BEHAVIOR.setText("Behavior: " + animalBehavior + "\n");
+        DIET.setText("Diet: " + animalDiet + "\n");
 
-        Button back = (Button) findViewById(R.id.button);
+        Button back = (Button) findViewById(R.id.backSeeAnimals);
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent seeFrogs = new Intent(view.getContext(), SeeAnimals.class);
-                startActivityForResult(seeFrogs, 0);
+                Intent seeAnimals = new Intent(view.getContext(), SeeAnimals.class);
+                startActivityForResult(seeAnimals, 0);
             }
         });
     }

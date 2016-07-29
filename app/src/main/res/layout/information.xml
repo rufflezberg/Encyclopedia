@@ -8,13 +8,13 @@
     android:layout_height="match_parent"
     android:background="#ff000000"
     android:weightSum="1"
-        android:id="@+id/froginfo">
+        android:id="@+id/animalInformation">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/fName"
+        android:id="@+id/animalName"
         android:layout_centerHorizontal="true"
         android:layout_weight="0.04"
         android:textColor="#ffffffff"/>
@@ -22,101 +22,101 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:id="@+id/fImag"
+        android:id="@+id/animalImage"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/fName"
+        android:layout_below="@+id/animalName"
         android:layout_weight="0.28" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/sName"
+        android:id="@+id/scientificName"
         android:layout_weight="0.04"
-        android:layout_below="@+id/fImag"
+        android:layout_below="@+id/animalImage"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/family"
+        android:id="@+id/animalFamily"
         android:layout_weight="0.04"
-        android:layout_below="@+id/sName"
+        android:layout_below="@+id/scientificName"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/descript"
+        android:id="@+id/animalDescription"
         android:layout_weight="0.04"
-        android:layout_below="@+id/family"
+        android:layout_below="@+id/animalFamily"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/siz"
+        android:id="@+id/animalSize"
         android:layout_weight="0.04"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/descript"
+        android:layout_below="@+id/animalDescription"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/voic"
+        android:id="@+id/animalVoice"
         android:layout_weight="0.04"
-        android:layout_below="@+id/siz"
+        android:layout_below="@+id/animalSize"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/breeding"
+        android:id="@+id/animalBreeding"
         android:layout_weight="0.04"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/voic"
+        android:layout_below="@+id/animalVoice"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/habit"
+        android:id="@+id/animalHabitat"
         android:layout_weight="0.04"
-        android:layout_below="@+id/breeding"
+        android:layout_below="@+id/animalBreeding"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/rang"
+        android:id="@+id/animalRange"
         android:layout_weight="0.04"
-        android:layout_below="@+id/habit"
+        android:layout_below="@+id/animalHabitat"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/behav"
+        android:id="@+id/animalBehavior"
         android:layout_weight="0.04"
-        android:layout_below="@+id/rang"
+        android:layout_below="@+id/animalRange"
         android:textColor="#ffffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/diet"
+        android:id="@+id/animalDiet"
         android:layout_weight="0.04"
-        android:layout_below="@+id/behav"
+        android:layout_below="@+id/animalBehavior"
         android:textColor="#ffffffff"/>
 
     <Button
@@ -124,8 +124,8 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:background="@color/material_blue_grey_800"
-        android:id="@+id/button"
-        android:layout_below="@+id/diet"
+        android:id="@+id/backSeeAnimals"
+        android:layout_below="@+id/animalDiet"
         android:layout_centerInParent="true"
         android:layout_weight="0.04" />
 

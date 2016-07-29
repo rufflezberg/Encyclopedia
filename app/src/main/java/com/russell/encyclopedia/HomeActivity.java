@@ -25,25 +25,25 @@ public class HomeActivity extends Activity {
             throw new Error("Unable to create database");
         }
 
-        ImageButton ad=(ImageButton)findViewById(R.id.imageButton);
-        ad.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view2){
-                Intent ad1=new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.lpzoo.org/"));
-                startActivity(ad1);
+        ImageButton lincolnParkAd=(ImageButton)findViewById(R.id.lincolnPark);
+        lincolnParkAd.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent lincolnParkAd=new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.lpzoo.org/"));
+                startActivity(lincolnParkAd);
             }
         });
-        ImageButton seeFrogsNav = (ImageButton) findViewById(R.id.seeFrogsNav);
-        seeFrogsNav.setOnClickListener(new View.OnClickListener(){
+        ImageButton seeAnimalsNav = (ImageButton) findViewById(R.id.seeAnimalsNav);
+        seeAnimalsNav.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent seeFrogs = new Intent(view.getContext(), SeeAnimals.class);
-                startActivityForResult(seeFrogs, 0);
+                Intent seeAnimals = new Intent(view.getContext(), SeeAnimals.class);
+                startActivityForResult(seeAnimals, 0);
             }
         });
 
         ImageButton triviaGameNav = (ImageButton) findViewById(R.id.triviaGameNav);
         triviaGameNav.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view1){
-                Intent triviaGame = new Intent (view1.getContext(), TriviaGame.class);
+            public void onClick(View view){
+                Intent triviaGame = new Intent (view.getContext(), TriviaGame.class);
                 startActivityForResult(triviaGame, 0);
             }
         });

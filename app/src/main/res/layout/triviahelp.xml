@@ -19,7 +19,7 @@
         You will be directed to the next page with the next question or the game over screen if you have answered all 10 questions.\n\n
         Once finished, you will be given the option to play again or go back to the trivia home screen. Play again will take you back to the first question. Home will take you back to the trivia home screen.\n\n
         To start, just go back to the trivia home screen and click \'PLAY\' and you\'ll be on your way! HAPPY HOPPING!\n\n"
-        android:id="@+id/textView17"
+        android:id="@+id/helpText"
         android:textColor="#ffffffff"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"/>
@@ -28,9 +28,9 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:text="Back"
-        android:id="@+id/button9"
+        android:id="@+id/backTrivia"
         android:background="@color/material_blue_grey_800"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/textView17"/>
+        android:layout_below="@+id/helpText"/>
 </RelativeLayout>
 </ScrollView>

@@ -15,32 +15,37 @@ public class TriviaGame extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.triviamain);
-        Button b1=(Button)findViewById(R.id.button4);
-        ImageButton ad2=(ImageButton)findViewById(R.id.imageButton2);
-        Button b3=(Button)findViewById(R.id.button6);
-        Button b4=(Button)findViewById(R.id.button7);
-        b1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view0){
-                Intent back=new Intent(view0.getContext(), TriviaPlay.class);
-                startActivityForResult(back, 0);
+
+        Button play=(Button)findViewById(R.id.play);
+        ImageButton brookfieldAd=(ImageButton)findViewById(R.id.brookfield);
+        Button help=(Button)findViewById(R.id.help);
+        Button home=(Button)findViewById(R.id.home);
+
+        play.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view){
+                Intent playNav=new Intent(view.getContext(), TriviaPlay.class);
+                startActivityForResult(playNav, 0);
             }
         });
-        ad2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view1) {
-                Intent ad1 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.czs.org/Brookfield-ZOO/Home"));
-                startActivity(ad1);
+
+        brookfieldAd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent brookfieldAd = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.czs.org/Brookfield-ZOO/Home"));
+                startActivity(brookfieldAd);
             }
         });
-        b3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view2){
-                Intent back=new Intent(view2.getContext(), TriviaHelp.class);
-                startActivityForResult(back, 0);
+
+        help.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view){
+                Intent helpNav=new Intent(view.getContext(), TriviaHelp.class);
+                startActivityForResult(helpNav, 0);
             }
         });
-        b4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view3){
-                Intent back=new Intent(view3.getContext(), HomeActivity.class);
-                startActivityForResult(back, 0);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view){
+                Intent homeNav=new Intent(view.getContext(), HomeActivity.class);
+                startActivityForResult(homeNav, 0);
             }
         });
     }

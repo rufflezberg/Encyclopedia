@@ -14,11 +14,12 @@ public class TriviaHelp extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.triviahelp);
-        Button b6=(Button)findViewById(R.id.button9);
-        b6.setOnClickListener(new View.OnClickListener() {
+
+        Button trivia=(Button)findViewById(R.id.backTrivia);
+        trivia.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
-                Intent back=new Intent(view.getContext(), TriviaGame.class);
-                startActivityForResult(back, 0);
+                Intent trivia=new Intent(view.getContext(), TriviaGame.class);
+                startActivityForResult(trivia, 0);
             }
         });
     }

@@ -29,7 +29,7 @@ public class SeeAnimals extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seeanimals);
 
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_seefrogs);
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.seeAnimals);
 
         DatabaseAccess db;
         db = new DatabaseAccess(this);
@@ -88,15 +88,15 @@ public class SeeAnimals extends Activity {
         }
         setOnClick(imageButtonList);
 
-        Button button = (Button)findViewById(R.id.button3);
+        Button back = (Button)findViewById(R.id.backHomeActivity);
         RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(250, 100);
         param.topMargin = 275 * (imageButtonList.size()/2) + 25;
         param.addRule(RelativeLayout.CENTER_HORIZONTAL);
-        button.setLayoutParams(param);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View toHome){
-                Intent back=new Intent(toHome.getContext(), HomeActivity.class);
-                startActivityForResult(back, 0);
+        back.setLayoutParams(param);
+        back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view){
+                Intent homeActivity=new Intent(view.getContext(), HomeActivity.class);
+                startActivityForResult(homeActivity, 0);
             }
         });
     }
@@ -104,7 +104,6 @@ public class SeeAnimals extends Activity {
     public void setOnClick(List<ImageButton> imageButtonList){
         for(int i = 0; i < imageButtonList.size(); i++){
             final int n = i;
-            //if needed lists have an indexOf(Object o) function
             imageButtonList.get(i).setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view){
                     Intent toInfo=new Intent(view.getContext(), Information.class);

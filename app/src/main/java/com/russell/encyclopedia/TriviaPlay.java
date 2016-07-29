@@ -19,24 +19,24 @@ import java.util.List;
  * Created by Russell on 4/13/2015.
  */
 public class TriviaPlay extends Activity {
-    TextView QUESTION,QUEST_NUM;
-    Button ANSWER1,ANSWER2,ANSWER3,ANSWER4;
+    TextView QUESTION,QUESTIONNUMBER;
+    Button ANSWERA,ANSWERB,ANSWERC,ANSWERD;
     ImageView IMAGE;
-    String question,quest_num,answer1,answer2,answer3,answer4,correct_let;
-    static String correct_letter,correct_l;
+    String question,questionNumber,answerA,answerB,answerC,answerD;
+    static String answer,correctAnswer;
     Context ctx=this;
-    static int correct=0, count1=1, numOfQuests=0;
+    static int correctAnswers=0, questionCount=1, numberOfQuestions=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.triviaplaygame);
-        QUEST_NUM=(TextView)findViewById(R.id.textView18);
-        QUESTION=(TextView)findViewById(R.id.textView19);
-        IMAGE=(ImageView)findViewById(R.id.imageView);
-        ANSWER1=(Button)findViewById(R.id.button10);
-        ANSWER2=(Button)findViewById(R.id.button11);
-        ANSWER3=(Button)findViewById(R.id.button12);
-        ANSWER4=(Button)findViewById(R.id.button13);
+        QUESTIONNUMBER=(TextView)findViewById(R.id.questionNumber);
+        QUESTION=(TextView)findViewById(R.id.question);
+        IMAGE=(ImageView)findViewById(R.id.questionImage);
+        ANSWERA=(Button)findViewById(R.id.answerA);
+        ANSWERB=(Button)findViewById(R.id.answerB);
+        ANSWERC=(Button)findViewById(R.id.answerC);
+        ANSWERD=(Button)findViewById(R.id.answerD);
 
         DatabaseAccess db;
         db = new DatabaseAccess(this);
@@ -52,123 +52,130 @@ public class TriviaPlay extends Activity {
 
         }
 
-        if(count1==0)
-            numOfQuests = db.getNumOfQuestions();
-        List<String> list = db.getTriviaInfo(count1);
-        byte[] image = db.getTriviaImage(count1);
+        if(questionCount==0)
+            numberOfQuestions = db.getNumOfQuestions();
+
+        List<String> list = db.getTriviaInfo(questionCount);
+        byte[] image = db.getTriviaImage(questionCount);
         Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
         BitmapDrawable drawableBitmap = new BitmapDrawable(ctx.getResources(), bitmap);
+
         IMAGE.setBackground(drawableBitmap);
-            if(count1==1)
+            if(questionCount==1)
             {
                 question=list.get(0);
-                answer1=list.get(1);
-                answer2=list.get(2);
-                answer3=list.get(3);
-                answer4=list.get(4);
-                correct_let=list.get(5);
-                sText(question,answer1,answer2,answer3,answer4,correct_let);
+                answerA=list.get(1);
+                answerB=list.get(2);
+                answerC=list.get(3);
+                answerD=list.get(4);
+                correctAnswer=list.get(5);
+                setText(question,answerA,answerB,answerC,answerD,correctAnswer);
             }
             else
             {
-                checkCorrect(correct_l);
+                checkCorrect(answer);
                 question=list.get(0);
-                answer1=list.get(1);
-                answer2=list.get(2);
-                answer3=list.get(3);
-                answer4=list.get(4);
-                correct_let=list.get(5);
-                sText(question,answer1,answer2,answer3,answer4,correct_let);
+                answerA=list.get(1);
+                answerB=list.get(2);
+                answerC=list.get(3);
+                answerD=list.get(4);
+                correctAnswer=list.get(5);
+                setText(question,answerA,answerB,answerC,answerD,correctAnswer);
             }
-        quest_num="Question: " + count1 + "/10\n";
-        QUEST_NUM.setText(quest_num);
-        count1++;
-        if(count1==numOfQuests+1)
+
+        questionNumber="Question: " + questionCount + "/10\n";
+        QUESTIONNUMBER.setText(questionNumber);
+        questionCount++;
+
+        if(questionCount==numberOfQuestions+1)
         {
-            count1=0;
-            numOfQuests=0;
-            gameOver();
+            questionCount=0;
+            numberOfQuestions=0;
+            nextQuestion(true);
         }
         else
         {
-            nextQuestion();
+            nextQuestion(false);
         }
+    }
 
-    }
-    void sText(String a, String b, String c, String d, String e, String f)
+    void setText(String question, String answerA, String answerB, String answerC, String answerD, String correctAnswer)
     {
-        QUESTION.setText(a + "\n");
-        ANSWER1.setText(b);
-        ANSWER2.setText(c);
-        ANSWER3.setText(d);
-        ANSWER4.setText(e);
-        correct_letter=f;
+        QUESTION.setText(question + "\n");
+        ANSWERA.setText(answerA);
+        ANSWERB.setText(answerB);
+        ANSWERC.setText(answerC);
+        ANSWERD.setText(answerD);
+        this.correctAnswer=correctAnswer;
     }
-    static void checkCorrect(String let)
+
+    static void checkCorrect(String answer)
     {
-        if(let.equals(correct_letter))
-            correct++;
+        if(answer.equals(correctAnswer))
+            correctAnswers++;
     }
-    void gameOver()
+
+    void nextQuestion(boolean isOver)
     {
-        ANSWER1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view4) {
-                correct_l="A";
-                Intent done = new Intent(view4.getContext(), TriviaGameOver.class);
-                startActivityForResult(done, 0);
-            }
-        });
-        ANSWER2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view5) {
-                correct_l="B";
-                Intent done = new Intent(view5.getContext(), TriviaGameOver.class);
-                startActivityForResult(done, 0);
-            }
-        });
-        ANSWER3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view6) {
-                correct_l="C";
-                Intent done = new Intent(view6.getContext(), TriviaGameOver.class);
-                startActivityForResult(done, 0);
-            }
-        });
-        ANSWER4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view7) {
-                correct_l="D";
-                Intent done = new Intent(view7.getContext(), TriviaGameOver.class);
-                startActivityForResult(done, 0);
-            }
-        });
-    }
-    void nextQuestion()
-    {
-        ANSWER1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
-                correct_l="A";
-                Intent back=new Intent(view.getContext(), TriviaPlay.class);
-                startActivityForResult(back, 0);
-            }
-        });
-        ANSWER2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view1){
-                correct_l="B";
-                Intent back=new Intent(view1.getContext(), TriviaPlay.class);
-                startActivityForResult(back, 0);
-            }
-        });
-        ANSWER3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view2){
-                correct_l="C";
-                Intent back=new Intent(view2.getContext(), TriviaPlay.class);
-                startActivityForResult(back, 0);
-            }
-        });
-        ANSWER4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view3){
-                correct_l="D";
-                Intent back=new Intent(view3.getContext(), TriviaPlay.class);
-                startActivityForResult(back, 0);
-            }
-        });
+        if(isOver){
+            ANSWERA.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="A";
+                    Intent gameOver = new Intent(view.getContext(), TriviaPlay.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+            ANSWERB.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="B";
+                    Intent gameOver = new Intent(view.getContext(), TriviaPlay.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+            ANSWERC.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="C";
+                    Intent gameOver = new Intent(view.getContext(), TriviaPlay.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+            ANSWERD.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="D";
+                    Intent gameOver = new Intent(view.getContext(), TriviaPlay.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+        }
+        else{
+            ANSWERA.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="A";
+                    Intent gameOver = new Intent(view.getContext(), TriviaGameOver.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+            ANSWERB.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="B";
+                    Intent gameOver = new Intent(view.getContext(), TriviaGameOver.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+            ANSWERC.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="C";
+                    Intent gameOver = new Intent(view.getContext(), TriviaGameOver.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+            ANSWERD.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    correctAnswer="D";
+                    Intent gameOver = new Intent(view.getContext(), TriviaGameOver.class);
+                    startActivityForResult(gameOver, 0);
+                }
+            });
+        }
     }
 }
