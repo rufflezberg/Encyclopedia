@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.io.IOException;
@@ -50,6 +51,15 @@ public class HomeActivity extends Activity {
             public void onClick(View view){
                 Intent triviaGame = new Intent (view.getContext(), TriviaMain.class);
                 startActivityForResult(triviaGame, 0);
+            }
+        });
+
+        //Navigation to the photo recognition activity
+        Button photoRecognitionNav = (Button)findViewById(R.id.PhotoRecognitionActivity);
+        photoRecognitionNav.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent photoRecognition = new Intent(view.getContext(), PhotoRecognition.class);
+                startActivityForResult(photoRecognition, 0);
             }
         });
     }

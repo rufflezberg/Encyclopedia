@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Frog Encyclopdepia</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Encyclopdepia</string>
     <string name="action_settings">Settings</string>
     <string name="Welcome">Welcome to the Frogs of Illinois Encyclopedia!\n\n\n\n\n</string>
     <string name="Frog_View">Click on my picture to see the frogs!</string>
